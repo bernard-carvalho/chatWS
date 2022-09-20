@@ -18,5 +18,7 @@ app.get("/", ( _ , res) => res.sendFile(`${__dirname}/index.html`))
 serverSocket.on("connect", socket => {
     console.log(`Cliente ${socket.id} conectou`)
     socket.on("chat msg", msg => {
-        console.log(`Msg recebida de ${socket.id}: ${msg}`);})
+        console.log(`Msg recebida de ${socket.id}: ${msg}`)
+        serverSocket.emit("chat msg",`Msg recebida de ${socket.id}: ${msg}`)
+        })
 })
