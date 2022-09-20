@@ -13,6 +13,8 @@ http.listen(PORT, () => console.log(`Servidor Iniciado em ${PORT}`))
 
 app.get("/", ( _ , res) => res.sendFile(`${__dirname}/index.html`))
 
+//serverSocket.on()
+
 serverSocket.on("connect", socket => {
     console.log(`Cliente ${socket.id} conectou`)
 })
