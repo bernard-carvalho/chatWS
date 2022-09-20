@@ -7,4 +7,6 @@ const PORT = 8000
 
 http.listen(PORT, () => console.log(`Servidor Iniciado em ${PORT}`))
 
+app.get("/", (req, res) => res.sendFile(`${__dirname}`/index.html))
+
 
