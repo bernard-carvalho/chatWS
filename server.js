@@ -5,7 +5,7 @@ const app = express()
 app.use(express.static("public"))
 
 const http = require("http").Server(app)
-const PORT = 8000
+const PORT = process.env.PORT || 8000
 
 const serverSocket = require("socket.io")(http)
 
